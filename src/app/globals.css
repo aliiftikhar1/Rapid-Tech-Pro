@@ -34,3 +34,17 @@ body {
 .animate-marquee {
   animation: marquee 30s linear infinite;
 }
+
+.animate-marquee-for-mobile {
+  animation: marquee 8s linear infinite;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

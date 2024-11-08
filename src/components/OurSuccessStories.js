@@ -38,7 +38,7 @@ const SuccessStories = () => {
   return (
     <section className="py-12 bg-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-extrabold text-gray-900 mb-8 text-left">Our Success Stories</h2>
+        <h2 className="md:text-6xl text-4xl font-bold text-gray-900 mb-8 text-left">Our Success Stories</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {stories.map((story) => (
             <div
@@ -48,9 +48,9 @@ const SuccessStories = () => {
               <img
                 src={story.imageUrl}
                 alt={story.title}
-                className="w-full h-80 object-contain"
+                className="w-full md:h-80 object-contain"
               />
-              <div className="p-6">
+              <div className="md:p-6 p-2">
                 <h3 className="text-xl font-semibold text-gray-800">{story.title}</h3>
                 <p className="text-gray-600 mt-2">{story.description}</p>
                 <a

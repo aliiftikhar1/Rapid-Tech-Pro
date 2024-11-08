@@ -9,6 +9,12 @@ import TabsSection from "@/components/Tabs";
 import CreateSoftwareSection from "@/components/CreateSoftwaresection";
 import SuccessStories from "@/components/OurSuccessStories";
 import OurProductDevelopmentProcess from "@/components/OurProductDevelopmentProcess";
+import OurClientsLove from "@/components/OurClientsLove";
+import Industries from "@/components/Industries";
+import BlogSection from "@/components/BlogsSection";
+import CallToAction from "@/components/CallToAction";
+import Footer from "@/components/Footer";
+import ChatWithWhatsapp from "@/components/Chatwithwhatsapp";
 
 export default function Home(){
   const companyNames = [
@@ -20,6 +26,7 @@ export default function Home(){
   ];
   return(
     <>
+    <ChatWithWhatsapp/>
     <Header/>
     <Herosection/>
     <OurJourney/>
@@ -30,7 +37,11 @@ export default function Home(){
     <CreateSoftwareSection/>
     <SuccessStories/>
     <OurProductDevelopmentProcess/>
-    {/* <OurProductDevelopmentProcess/> */}
+    <OurClientsLove/>
+    <Industries/>
+    <BlogSection/>
+    <CallToAction/>
+    <Footer/>
     </>
   )
 }

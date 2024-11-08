@@ -30,14 +30,14 @@ const AwardsAndRecognitions = () => {
   ];
 
   return (
-    <section className="bg-black text-white py-20 px-16">
-      <h2 className="text-6xl max-w-xl font-bold text-left mb-8">
+    <section className="bg-black text-white py-10 md:py-20 px-2 md:px-16">
+      <h2 className="md:text-6xl text-4xl max-w-xl font-bold text-left mb-8">
         Our Awards and <span className="text-blue-500">Recognitions.</span>
       </h2>
-      <p className="text-left text-2xl font-extralight mb-12 max-w-5xl">
+      <p className=" text-lg text-justify md:text-2xl md:font-extralight font-light mb-12 max-w-5xl">
         Recognized globally for our industry-leading development expertise and innovative solutions. Creating innovative, user-friendly, and life-changing products is what we do!
       </p>
-      <div className=" h-[300px] flex justify-center gap-6 flex-wrap">
+      <div className=" md:h-[300px] flex justify-center gap-6 flex-wrap">
         {awardsData.map((award, index) => (
           <div
             key={index}

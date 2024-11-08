@@ -3,57 +3,43 @@ import React, { useState } from 'react';
 
 // Define the list of tabs and their respective data
 const tabData = [
-    {
-      name: 'mobileApps',
-      title: 'Mobile Apps',
-      content: {
-        iOS: ['Swift', 'UI Kit', 'RxSwift', 'Combine', 'MVVM', 'Core Data', 'SwiftUI', 'Realm', 'Alamofire', 'MapKit'],
-        android: ['Java', 'Kotlin', 'Retrofit', 'RxJava', 'Coroutines', 'Room', 'Dagger', 'Hilt', 'Jetpack Compose', 'LiveData'],
-      },
+  {
+    name: 'mobileApps',
+    title: 'Mobile Apps',
+    content: {
+      iOS: ['Swift', 'UI Kit', 'RxSwift', 'Combine', 'MVVM', 'Core Data', 'SwiftUI', 'Realm', 'Alamofire', 'MapKit'],
+      android: ['Java', 'Kotlin', 'Retrofit', 'RxJava', 'Coroutines', 'Room', 'Dagger', 'Hilt', 'Jetpack Compose', 'LiveData'],
     },
-    {
-      name: 'webPlatforms',
-      title: 'Web Platforms',
-      content: ['React', 'Angular', 'Vue', 'Next.js', 'Svelte', 'Nuxt.js', 'Ember.js', 'Backbone.js', 'Bootstrap', 'jQuery'],
-    },
-    {
-      name: 'database',
-      title: 'Database',
-      content: ['MySQL', 'MongoDB', 'PostgreSQL', 'SQLite', 'OracleDB', 'Cassandra', 'Firebase Realtime Database', 'Redis', 'Neo4j', 'DynamoDB'],
-    },
-    {
-      name: 'flutter',
-      title: 'Flutter',
-      content: ['Dart', 'Flutter SDK', 'Flutter Web', 'Provider', 'BLoC', 'GetX', 'Riverpod', 'Flame', 'FlutterFire', 'Hive'],
-    },
-    {
-      name: 'nodejs',
-      title: 'Node.js',
-      content: ['Express', 'NestJS', 'Koa', 'Socket.io', 'Mongoose', 'PM2', 'Jest', 'Apollo Server', 'Fastify', 'Microservices'],
-    },
-    {
-      name: 'php',
-      title: 'PHP',
-      content: ['Laravel', 'CodeIgniter', 'Symfony', 'Yii', 'Zend Framework', 'CakePHP', 'Phalcon', 'Slim', 'FuelPHP', 'Lumen'],
-    },
-    {
-      name: 'nextjs',
-      title: 'Next.js',
-      content: ['Server-side Rendering', 'Static Site Generation', 'API Routes', 'Image Optimization', 'Incremental Static Regeneration', 'Dynamic Routing', 'Middleware', 'Edge Functions', 'React Fast Refresh', 'SEO Optimization'],
-    },
-    {
-      name: 'firebase',
-      title: 'Firebase',
-      content: ['Authentication', 'Firestore', 'Firebase Realtime Database', 'Cloud Functions', 'Hosting', 'Cloud Storage', 'Firebase Analytics', 'Remote Config', 'Performance Monitoring', 'Crashlytics'],
-    },
-    {
-      name: 'python',
-      title: 'Python',
-      content: ['Django', 'Flask', 'FastAPI', 'Pandas', 'NumPy', 'Scikit-Learn', 'TensorFlow', 'Keras', 'Beautiful Soup', 'Celery'],
-    },
-  ];
-  
-  
+  },
+
+  {
+    name: 'flutter',
+    title: 'Flutter',
+    content: ['Dart', 'Flutter SDK', 'Flutter Web', 'Provider', 'BLoC', 'GetX', 'Riverpod', 'Flame', 'FlutterFire', 'Hive'],
+  },
+  {
+    name: 'nodejs',
+    title: 'Node.js',
+    content: ['Express', 'NestJS', 'Koa', 'Socket.io', 'Mongoose', 'PM2', 'Jest', 'Apollo Server', 'Fastify', 'Microservices'],
+  },
+  {
+    name: 'nextjs',
+    title: 'Next.js',
+    content: ['Server-side', 'Static Site ', 'API Routes', 'Image Optimization', 'Dynamic Routing', 'Middleware', 'Edge Functions', 'React Fast Refresh', 'SEO Optimization'],
+  },
+  {
+    name: 'firebase',
+    title: 'Firebase',
+    content: ['Authentication', 'Firestore', 'Firebase Realtime Database', 'Cloud Functions', 'Hosting', 'Cloud Storage', 'Firebase Analytics', 'Remote Config', 'Performance Monitoring', 'Crashlytics'],
+  },
+  {
+    name: 'python',
+    title: 'Python',
+    content: ['Django', 'Flask', 'FastAPI', 'Pandas', 'NumPy', 'Scikit-Learn', 'TensorFlow', 'Keras', 'Beautiful Soup', 'Celery'],
+  },
+];
+
+
 
 const TabsSection = () => {
   const [activeTab, setActiveTab] = useState(tabData[0].name); // Default tab is the first one
@@ -70,10 +56,10 @@ const TabsSection = () => {
         <div className="flex flex-col gap-8">
           {Object.entries(activeTabData.content).map(([subCategory, items]) => (
             <div key={subCategory}>
-              <h3 className="text-4xl mb-2">{subCategory}</h3>
-              <div className="grid grid-cols-3 gap-4">
+              <h3 className="md:text-4xl text-2xl mb-2">{subCategory}</h3>
+              <div className="grid grid-cols-3 gap-2 md:gap-4">
                 {items.map((item, index) => (
-                  <div key={index} className="bg-gray-200 text-center rounded-full px-4 py-2 text-3xl">
+                  <div key={index} className="bg-gray-200 text-center rounded-full md:px-4 px-2 py-1 md:py-2 text-sm md:text-2xl">
                     {item}
                   </div>
                 ))}
@@ -87,7 +73,7 @@ const TabsSection = () => {
       return (
         <div className="grid grid-cols-3 gap-2">
           {activeTabData.content.map((item, index) => (
-            <div key={index} className="bg-gray-200 text-center rounded-full px-4 py-2 text-3xl">
+            <div key={index} className="bg-gray-200 text-center rounded-full md:px-4 md:py-2 px-2 py-1 text-sm md:text-2xl">
               {item}
             </div>
           ))}
@@ -97,17 +83,18 @@ const TabsSection = () => {
   };
 
   return (
-    <div className="flex text-2xl h-screen">
+    <div className="flex flex-col md:flex-row text-lg md:text-2xl md:h-screen md:px-28 mx-auto w-full">
       {/* Left Side - Tabs */}
-      <div className="w-1/4 text-black p-6 border-t">
-        <div className="space-y-4">
+      <div className="md:w-1/4 text-black md:p-6 p-6 md:border-t">
+        <div className="flex flex-row md:flex-col md:space-y-4 overflow-x-auto overflow-y-hidden no-scrollbar">
           {tabData.map((tab) => (
             <button
               key={tab.name}
               onClick={() => setActiveTab(tab.name)}
-              className={`w-full text-left py-2 px-4 rounded-lg hover:bg-gradient-to-r from-blue-300 to-white ${
-                activeTab === tab.name ? 'bg-gradient-to-r from-blue-300 to-white' : ''
-              }`}
+              className={`min-w-max text-left md:py-2 md:px-4 px-2 py-1 rounded-lg  
+            ${activeTab === tab.name
+                  ? 'font-bold md:font-normal md:bg-gradient-to-r from-blue-300 to-white underline md:no-underline'
+                  : ''}`}
             >
               {tab.title}
             </button>
@@ -115,9 +102,13 @@ const TabsSection = () => {
         </div>
       </div>
 
+
+
       {/* Right Side - Tab Content */}
-      <div className="w-3/4 border-t border-l p-6">
+      <div className="w-full border-t md:border-l p-6">
+        <div className='max-w-3xl'>
         {renderTabContent()}
+        </div>
       </div>
     </div>
   );
