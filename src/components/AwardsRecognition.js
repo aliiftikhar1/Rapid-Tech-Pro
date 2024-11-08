@@ -37,11 +37,11 @@ const AwardsAndRecognitions = () => {
       <p className=" text-lg text-justify md:text-2xl md:font-extralight font-light mb-12 max-w-5xl">
         Recognized globally for our industry-leading development expertise and innovative solutions. Creating innovative, user-friendly, and life-changing products is what we do!
       </p>
-      <div className=" md:h-[300px] flex justify-center gap-6 flex-wrap">
+      <div className=" md:h-[300px] grid grid-cols-1 md:grid-cols-4 justify-center gap-6 ">
         {awardsData.map((award, index) => (
           <div
             key={index}
-            className="flex flex-col justify-between items-center bg-gradient-to-br  from-black/10  to-gray-500 rounded-lg p-6 w-80 text-left"
+            className="flex flex-col justify-between items-center bg-gradient-to-br  from-black/10  to-gray-500 rounded-lg p-6 md:w-76 text-left"
           >
             <div className="flex justify-between items-center gap-2 mb-4 w-full">
                 <div className='flex justify-center items-center'> <h3 className="font-semibold text-2xl mb-4">{award.company}</h3></div>
