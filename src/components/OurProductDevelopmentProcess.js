@@ -1,6 +1,6 @@
 'use client';
 import { motion, useTransform, useScroll } from "framer-motion";
-import { useRef } from "react";
+import { useRef,useState,useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa";
 
 const OurProductDevelopmentProcess = () => {
@@ -21,7 +21,24 @@ const OurProductDevelopmentProcess = () => {
 const HorizontalScrollCarousel = () => {
     const targetRef = useRef(null);
     const { scrollYProgress } = useScroll({ target: targetRef });
-    const x = useTransform(scrollYProgress, [0, 1], ["0%", "-83%"]);
+
+    // State to store window width
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        // Update isMobile based on the window width
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+        handleResize(); // Check once on mount
+        window.addEventListener("resize", handleResize);
+        
+        // Cleanup on unmount
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    // Apply different transform ranges based on isMobile
+    const x = useTransform(scrollYProgress, [0, 1], isMobile ? ["0%", "0%"] : ["0%", "-83%"]);
 
     return (
         <section ref={targetRef} className="relative md:h-[300vh] bg-black w-full">
